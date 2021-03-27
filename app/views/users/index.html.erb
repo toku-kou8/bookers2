@@ -19,8 +19,8 @@
             <% @users.each do |user| %>
             <tr>
               <td>
-                <%= link_to users_show_path(user.id) do %>
-                  <%= attachment_image_tag user, :profile_image_id %>
+                <%= link_to user_path(user.id) do %>
+                  <%= attachment_image_tag user, :profile_image, :fill, 10, 10, fallback: 'no_image.jpg' %>
                 <% end %>
               </td>
               <td>
