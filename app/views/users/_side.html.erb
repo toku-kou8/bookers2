@@ -1,5 +1,5 @@
 <h2>User info</h2>
-<td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: 'no_image.jpg'  %></td>
+<%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: 'no_image.jpg'  %>
 <table class='table'>
   <tbody>
     <tr></tr>
@@ -16,5 +16,9 @@
 <% if user == current_user %>
 <div class='row'>
   <%= link_to 'edit', edit_user_path(user.id), class:'btn btn-edit fas fa-user-cog' %>
+</div>
+<% else %>
+<div class='row'>
+  <%= link_to 'edit', user_path(current_user.id), class:'btn btn-edit fas fa-user-cog' %>
 </div>
 <% end %>

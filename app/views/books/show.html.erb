@@ -7,8 +7,8 @@
   <div class='container'>
     <div class='row'>
       <div class='col-md-3'>
-        <%= render 'users/side', user:@book.user %>
-        <%= render 'books/side-create', book:@bookc %>
+        <%= render 'users/side', user: @user %>
+        <%= render 'books/side-create', book: @bookc %>
       </div>
       <div class="col-md-8 offser-md-1">
         <h2>Book detail</h2>
@@ -16,7 +16,7 @@
           <tbody>
             <tr>
               <td><%= link_to user_path(@book.user.id) do %>
-                <% attachment_image_tag @book.user, :profile_image,  :fill, 10, 10, fallback: 'no_image.jpg' %>
+                <% attachment_image_tag @book.user, :profile_image,  :fill, 20, 20, fallback: 'no_image.jpg' %>
                 <br><%= @book.user.name %>
                 <% end %>
               </td>

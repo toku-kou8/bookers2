@@ -1,7 +1,7 @@
 <main class='p-5'>  
   <h2>Sign up</h2>
   <% if @user.errors.any? %>
-    <%= @user.errors.coutnt %>errors prohibited this user from being saved:
+    <%= @user.errors.count %>errors prohibited this user from being saved:
     <%= @user.errors.full_messages.each do |message| %>
       <%= message %>
     <% end %>
