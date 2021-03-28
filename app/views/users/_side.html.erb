@@ -13,12 +13,7 @@
     </tr>
   </tbody>
 </table>
-<% if user == current_user %>
 <div class='row'>
   <%= link_to 'edit', edit_user_path(user.id), class:'btn btn-edit fas fa-user-cog' %>
 </div>
-<% else %>
-<div class='row'>
-  <%= link_to 'edit', user_path(current_user.id), class:'btn btn-edit fas fa-user-cog' %>
-</div>
-<% end %>
+
