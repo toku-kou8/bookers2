@@ -1,9 +1,9 @@
 <main>
   <% if flash[:notice] %>
-      <div class="flash">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
   <div class='container px-5 px-sm-0'>
     <div class='row'>
       <div class='col-md-3'>
@@ -34,6 +34,23 @@
               </td>
               <td>
                 <%= book.body %>
+              </td>
+              <td>
+                <% if book.favorited_by?(current_user) %>
+                  <p>
+                    <%= link_to book_favorites_path(book), method: :delete do %>
+                      <i class="fas fa-heart"></i>
+                      <%= book.favorites.count %>
+                    <% end %>
+                  </p>
+                  <% else %>
+                  <p>
+                    <%= link_to book_favorites_path(book), method: :post do %>
+                      <i class="far fa-heart"></i>
+                      <%= book.favorites.count %>
+                    <% end %>
+                  </p>
+                <% end %>
               </td>
             </tr>
             <% end %>
